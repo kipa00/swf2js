@@ -54,6 +54,8 @@ public class Tag {
                     return new RemoveObject2Tag().fromTag(tag);
                 case 32:
                     return new DefineShape3Tag().fromTag(tag);
+                case 35:
+                    return new DefineBitsJPEG3Tag().fromTag(tag);
                 default:
                     return new UnknownTag().fromTag(tag);
             }

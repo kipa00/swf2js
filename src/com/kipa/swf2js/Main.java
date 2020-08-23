@@ -32,7 +32,7 @@ public class Main {
                     bos.close();
                 } else if (tag instanceof DefineBitsJPEG2Tag) {
                     DefineBitsJPEG2Tag defineTag = (DefineBitsJPEG2Tag)tag;
-                    BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("./resources/" + defineTag.getCharacterId() + ".jpeg"));
+                    BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("./resources/" + defineTag.getCharacterId() + "." + defineTag.getExtension()));
                     JPEGFile file = new JPEGFile();
                     file.fromDefineBitsJPEG2(defineTag);
                     file.write(bos);

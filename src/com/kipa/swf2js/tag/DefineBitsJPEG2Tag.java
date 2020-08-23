@@ -7,8 +7,8 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 public class DefineBitsJPEG2Tag extends Tag {
-    private int characterId;
-    private byte[] imageData;
+    protected int characterId;
+    protected byte[] imageData;
 
     @Override
     public void validate() throws WrongTagException {
@@ -35,5 +35,18 @@ public class DefineBitsJPEG2Tag extends Tag {
 
     public byte[] getImageData() {
         return imageData;
+    }
+
+    public String getExtension() {
+        if (this.imageData == null || this.imageData.length == 0) {
+            return null;
+        }
+        if (this.imageData[0] == (byte)0x47) {
+            return "gif";
+        }
+        if (this.imageData[0] == (byte)0x89) {
+            return "png";
+        }
+        return "jpg";
     }
 }
