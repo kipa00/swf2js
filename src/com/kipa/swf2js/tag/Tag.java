@@ -56,6 +56,8 @@ public class Tag {
                     return new DefineShape3Tag().fromTag(tag);
                 case 35:
                     return new DefineBitsJPEG3Tag().fromTag(tag);
+                case 39:
+                    return new DefineSpriteTag().fromTag(tag);
                 default:
                     return new UnknownTag().fromTag(tag);
             }
